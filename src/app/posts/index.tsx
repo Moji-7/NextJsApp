@@ -8,4 +8,4 @@ export default function Page() {
 }
 
 // This is how you export the layout component as a named export
-export {Layout}  from './layout';
+export { Layout }  from './layout';

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/posts/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690372887544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690372887544,
+            "name": "Commit-0",
+            "content": "// app/posts/index.tsx\r\n\r\nimport React from 'react';\r\n\r\n// This is a page component that defines the posts index route (/posts) of the app\r\nexport default function Page() {\r\n  return <h3>Here are some posts</h3>;\r\n}\r\n\r\n// This is how you export the layout component as a named export\r\nexport { Layout }  from './layout';\r\n"
+        }
+    ]
+}
