@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/products/clothes.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690372726129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690372726129,
+            "name": "Commit-0",
+            "content": "// app/products/clothes.tsx\r\n\r\nimport React from 'react';\r\n\r\n// This is a page component that defines the clothes route (/products/clothes) of the app\r\nexport default function Page() {\r\n  return (\r\n    <div>\r\n      <h3>Clothes</h3>\r\n      <ul>\r\n        {/* This is how you display some data or information for the page */}\r\n        <li>Zara T-shirt</li>\r\n        <li>H&M Jeans</li>\r\n        <li>Uniqlo Jacket</li>\r\n      </ul>\r\n    </div>\r\n  );\r\n}\r\n\r\n// This is how you export the custom layout component as a named export\r\nexport { Layout } from './layout';\r\n"
+        }
+    ]
+}

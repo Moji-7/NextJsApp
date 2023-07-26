@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/products/accessories.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690372752025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690372752025,
+            "name": "Commit-0",
+            "content": "// app/products/accessories.tsx\r\n\r\nimport React from 'react';\r\n\r\n// This is a page component that defines the accessories route (/products/accessories) of the app\r\nexport default function Page() {\r\n  return (\r\n    <div>\r\n      <h3>Accessories</h3>\r\n      <ul>\r\n        {/* This is how you display some data or information for the page */}\r\n        <li>Apple Watch</li>\r\n        <li>Ray-Ban Sunglasses</li>\r\n        <li>Gucci Belt</li>\r\n      </ul>\r\n    </div>\r\n  );\r\n}\r\n\r\n// This is how you export the custom layout component as a named export\r\nexport { Layout } from './layout';\r\n"
+        }
+    ]
+}
