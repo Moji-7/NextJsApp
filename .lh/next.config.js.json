@@ -1,0 +1,18 @@
+{
+    "sourceFile": "next.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690373151414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690373151414,
+            "name": "Commit-0",
+            "content": "// next.config.js\n\nmodule.exports = {\n  // Enable experimental features\n  experimental: {\n    // Enable support for React Server Components (requires React 18)\n    serverComponents: true,\n    // Enable support for streaming rendering (requires React 18)\n    concurrentFeatures: true,\n    // Enable support for Turbopack bundler (alpha)\n    turbopack: true,\n  },\n};\n"
+        }
+    ]
+}
