@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1690373151414,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690606889042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n     concurrentFeatures: true,\n     // Enable support for Turbopack bundler (alpha)\n     turbopack: true,\n   },\n+  appDirectory: 'app',\n };\n"
                 }
             ],
             "date": 1690373151414,

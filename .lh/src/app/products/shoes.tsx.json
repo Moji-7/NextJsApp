@@ -3,11 +3,23 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1690372712477,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690607061180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,33 @@\n-// app/products/shoes.tsx\r\n+import type { ReactElement } from 'react'\r\n+import type { GetStaticProps, GetStaticPaths } from 'next'\r\n+import ProductsLayout from './products-layout'\r\n \r\n-import React from 'react';\r\n-\r\n-// This is a page component that defines the shoes route (/products/shoes) of the app\r\n-export default function Page() {\r\n+export default function Shoes(): ReactElement {\r\n   return (\r\n     <div>\r\n-      <h3>Shoes</h3>\r\n-      <ul>\r\n-        {/* This is how you display some data or information for the page */}\r\n-        <li>Nike Air Max 270</li>\r\n-        <li>Adidas Ultraboost 21</li>\r\n-        <li>Reebok Nano X1</li>\r\n-      </ul>\r\n+      <h1>Shoes</h1>\r\n+      {/* Your shoes content here */}\r\n     </div>\r\n-  );\r\n+  )\r\n }\r\n \r\n-// This is how you export the custom layout component as a named export\r\n-export { Layout } from './layout';\r\n+Shoes.layout = ProductsLayout\r\n+\r\n+export const getStaticProps: GetStaticProps = async (context) => {\r\n+  // Fetch your shoes data based on context.params here\r\n+  return {\r\n+    props: {\r\n+      // Pass your shoes data as props here\r\n+    },\r\n+  }\r\n+}\r\n+\r\n+export const getStaticPaths: GetStaticPaths = async () => {\r\n+  // Generate your shoes paths here\r\n+  return {\r\n+    paths: [\r\n+      // Your shoes paths here\r\n+    ],\r\n+    fallback: false,\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1690607296133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps, GetStaticPaths } from 'next'\r\n-import ProductsLayout from './products-layout'\r\n+import { ProductsLayout } from './products-layout'\r\n \r\n export default function Shoes(): ReactElement {\r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1690607339529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,19 @@\n+\r\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps, GetStaticPaths } from 'next'\r\n import { ProductsLayout } from './products-layout'\r\n \r\n export default function Shoes(): ReactElement {\r\n   return (\r\n     <div>\r\n-      <h1>Shoes</h1>\r\n-      {/* Your shoes content here */}\r\n+      <h3>Shoes</h3>\r\n+      <ul>\r\n+        {/* This is how you display some data or information for the page */}\r\n+        <li>Nike Air Max 270</li>\r\n+        <li>Adidas Ultraboost 21</li>\r\n+        <li>Reebok Nano X1</li>\r\n+      </ul>\r\n     </div>\r\n   )\r\n }\r\n \r\n"
                 }
             ],
             "date": 1690372712477,

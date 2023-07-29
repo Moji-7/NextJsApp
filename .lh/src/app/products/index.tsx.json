@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/products/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690607061143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690607302637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n-import ProductsLayout from './products-layout'\r\n+import { ProductsLayout } from './products-layout'\r\n \r\n+\r\n export default function ProductsIndex(): ReactElement {\r\n   return (\r\n     <div>\r\n       <h1>Products Index</h1>\r\n"
+                }
+            ],
+            "date": 1690607061143,
+            "name": "Commit-0",
+            "content": "import type { ReactElement } from 'react'\r\nimport type { GetStaticProps } from 'next'\r\nimport ProductsLayout from './products-layout'\r\n\r\nexport default function ProductsIndex(): ReactElement {\r\n  return (\r\n    <div>\r\n      <h1>Products Index</h1>\r\n      {/* Your products index content here */}\r\n    </div>\r\n  )\r\n}\r\n\r\nProductsIndex.layout = ProductsLayout\r\n\r\nexport const getStaticProps: GetStaticProps = async () => {\r\n  // Fetch your products data here\r\n  return {\r\n    props: {\r\n      // Pass your products data as props here\r\n    },\r\n  }\r\n}\r\n"
+        }
+    ]
+}

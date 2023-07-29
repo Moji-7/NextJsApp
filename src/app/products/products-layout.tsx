@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 // This is a layout component that defines common UI elements for the products segment
 //export default function Layout({ children }: { children: React.ReactNode }) {
-function Layout({ children }: { children: React.ReactNode }) {
+function ProductsLayout({ children }: { children: React.ReactNode }) {
     return (
         <div>
             <h2>Products</h2>
@@ -26,4 +26,4 @@ function Layout({ children }: { children: React.ReactNode }) {
     );
 }
 // This is how you export the layout component as a named export
-export { Layout };
+export { ProductsLayout };

@@ -10,4 +10,5 @@ module.exports = {
     // Enable support for Turbopack bundler (alpha)
     turbopack: true,
   },
+  appDirectory: 'app',
 };

@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1690372726129,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690607194738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n   );\r\n }\r\n \r\n // This is how you export the custom layout component as a named export\r\n-export { Layout } from './layout';\r\n+export { Layout } from './product-layout';\r\n"
+                },
+                {
+                    "date": 1690607257876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,5 @@\n   );\r\n }\r\n \r\n // This is how you export the custom layout component as a named export\r\n-export { Layout } from './product-layout';\r\n+export { Layout } from './products-layout';\r\n"
                 }
             ],
             "date": 1690372726129,
