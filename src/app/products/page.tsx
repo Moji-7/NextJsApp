@@ -1,12 +1,12 @@
+
 import type { ReactElement } from 'react'
 import type { GetStaticProps } from 'next'
-import { ProductsLayout } from './products-layout'
+import ProductsLayout from './products-layout'
 
-
-export default function ProductsIndex(): ReactElement {
+export default function ProductsIndex({ title }: { title: string }): ReactElement {
   return (
     <div>
-      <h1>Products Index</h1>
+      <h1>{title}</h1>
       {/* Your products index content here */}
     </div>
   )
@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       // Pass your products data as props here
+      title: 'Products Index',
     },
   }
 }

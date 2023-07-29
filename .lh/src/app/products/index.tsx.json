@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1690607061143,
@@ -12,6 +12,42 @@
                 {
                     "date": 1690607302637,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n-import ProductsLayout from './products-layout'\r\n+import { ProductsLayout } from './products-layout'\r\n \r\n+\r\n export default function ProductsIndex(): ReactElement {\r\n   return (\r\n     <div>\r\n       <h1>Products Index</h1>\r\n"
+                },
+                {
+                    "date": 1690611197340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n export default function ProductsIndex(): ReactElement {\r\n   return (\r\n     <div>\r\n       <h1>Products Index</h1>\r\n-      {/* Your products index content here */}\r\n+      hi\r\n     </div>\r\n   )\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1690611534911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,13 @@\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n-import { ProductsLayout } from './products-layout'\r\n+import {ProductsLayout} from './products-layout'\r\n \r\n-\r\n-export default function ProductsIndex(): ReactElement {\r\n+export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n   return (\r\n     <div>\r\n-      <h1>Products Index</h1>\r\n-      hi\r\n+      <h1>{title}</h1>\r\n+      {/* Your products index content here */}\r\n     </div>\r\n   )\r\n }\r\n \r\n@@ -18,7 +17,8 @@\n   // Fetch your products data here\r\n   return {\r\n     props: {\r\n       // Pass your products data as props here\r\n+      title: 'Products Index',\r\n     },\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690611709529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\r\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n import {ProductsLayout} from './products-layout'\r\n \r\n"
+                },
+                {
+                    "date": 1690612683047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </div>\r\n   )\r\n }\r\n \r\n-ProductsIndex.layout = ProductsLayout\r\n+//ProductsIndex.layout = ProductsLayout\r\n \r\n export const getStaticProps: GetStaticProps = async () => {\r\n   // Fetch your products data here\r\n   return {\r\n"
+                },
+                {
+                    "date": 1690612731553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,4 @@\n }\r\n \r\n //ProductsIndex.layout = ProductsLayout\r\n \r\n-export const getStaticProps: GetStaticProps = async () => {\r\n-  // Fetch your products data here\r\n-  return {\r\n-    props: {\r\n-      // Pass your products data as props here\r\n-      title: 'Products Index',\r\n-    },\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1690612759194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,22 @@\n+export async function getStaticProps() {\r\n+  // Fetch data from an API \r\n+  const res = await fetch('https://myapi.com/products')\r\n+  const products = await res.json()\r\n \r\n-import type { ReactElement } from 'react'\r\n-import type { GetStaticProps } from 'next'\r\n-import {ProductsLayout} from './products-layout'\r\n+  return {\r\n+    props: { products }, // will be passed to the page component as props\r\n+  }\r\n+}\r\n \r\n-export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n+export default function Products({ products }) {\r\n+  // Render your products\r\n   return (\r\n     <div>\r\n-      <h1>{title}</h1>\r\n-      {/* Your products index content here */}\r\n+      {products.map((product) => (\r\n+        <div key={product.id}>\r\n+          {product.name}\r\n+        </div>\r\n+      ))}\r\n     </div>\r\n   )\r\n-}\r\n-\r\n-//ProductsIndex.layout = ProductsLayout\r\n-\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690612781942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,12 @@\n     props: { products }, // will be passed to the page component as props\r\n   }\r\n }\r\n \r\n-export default function Products({ products }) {\r\n+export default function Products({  }) {\r\n   // Render your products\r\n   return (\r\n     <div>\r\n-      {products.map((product) => (\r\n-        <div key={product.id}>\r\n-          {product.name}\r\n-        </div>\r\n-      ))}\r\n+      \r\n     </div>\r\n   )\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690613699158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,25 @@\n-export async function getStaticProps() {\r\n-  // Fetch data from an API \r\n-  const res = await fetch('https://myapi.com/products')\r\n-  const products = await res.json()\r\n \r\n-  return {\r\n-    props: { products }, // will be passed to the page component as props\r\n-  }\r\n-}\r\n+import type { ReactElement } from 'react'\r\n+import type { GetStaticProps } from 'next'\r\n+import {ProductsLayout} from './products-layout'\r\n \r\n-export default function Products({  }) {\r\n-  // Render your products\r\n+export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n   return (\r\n     <div>\r\n\\ No newline at end of file\n-      \r\n+      <h1>{title}</h1>\r\n+      {/* Your products index content here */}\r\n     </div>\r\n   )\r\n-}\n+}\r\n+\r\n+ProductsIndex.layout = ProductsLayout\r\n+\r\n+export const getStaticProps: GetStaticProps = async () => {\r\n+  // Fetch your products data here\r\n+  return {\r\n+    props: {\r\n+      // Pass your products data as props here\r\n+      title: 'Products Index',\r\n+    },\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1690613855390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \r\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n-import {ProductsLayout} from './products-layout'\r\n+import ProductsLayout from './products-layout'\r\n \r\n export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n   return (\r\n     <div>\r\n@@ -21,5 +21,5 @@\n       // Pass your products data as props here\r\n       title: 'Products Index',\r\n     },\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
                 }
             ],
             "date": 1690607061143,

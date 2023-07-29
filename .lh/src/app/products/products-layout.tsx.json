@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1690607268394,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690613848721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,21 @@\n \r\n import React from 'react';\r\n import Link from 'next/link';\r\n \r\n-// This is a layout component that defines common UI elements for the products segment\r\n-//export default function Layout({ children }: { children: React.ReactNode }) {\r\n-function ProductsLayout({ children }: { children: React.ReactNode }) {\r\n+\r\n+\r\n+export default function ProductsLayout({\r\n+    children, // will be a page or nested layout\r\n+  }: {\r\n+    children: React.ReactNode\r\n+  }) {\r\n     return (\r\n-        <div>\r\n-            <h2>Products</h2>\r\n-            <ul>\r\n+      <section>\r\n+        {/* Include shared UI here e.g. a header or sidebar */}\r\n+        <nav>\r\n+\r\n+        <ul>\r\n                 {/* This is how you link to static or dynamic routes within the feature */}\r\n                 <li>\r\n                     <Link href=\"/products/shoes\">Shoes</Link>\r\n                 </li>\r\n@@ -20,10 +26,12 @@\n                 <li>\r\n                     <Link href=\"/products/accessories\">Accessories</Link>\r\n                 </li>\r\n             </ul>\r\n-            {children}\r\n-        </div>\r\n-    );\r\n-}\r\n-// This is how you export the layout component as a named export\r\n-export { ProductsLayout };\n\\ No newline at end of file\n+        </nav>\r\n+   \r\n+        {children}\r\n+      </section>\r\n+    )\r\n+  }\r\n+  // This is how you export the layout component as a named export\r\n+//export { ProductsLayout };\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1690607268394,

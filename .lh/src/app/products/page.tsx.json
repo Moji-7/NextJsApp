@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app/products/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690613644236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690613706391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,25 @@\n-// `app/dashboard/page.tsx` is the UI for the `/dashboard` URL\r\n-export default function Page() {\r\n-    return <h1>Hello, Dashboard Page!</h1>\r\n-  }\n\\ No newline at end of file\n+\r\n+import type { ReactElement } from 'react'\r\n+import type { GetStaticProps } from 'next'\r\n+import {ProductsLayout} from './products-layout'\r\n+\r\n+export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n+  return (\r\n+    <div>\r\n+      <h1>{title}</h1>\r\n+      {/* Your products index content here */}\r\n+    </div>\r\n+  )\r\n+}\r\n+\r\n+ProductsIndex.layout = ProductsLayout\r\n+\r\n+export const getStaticProps: GetStaticProps = async () => {\r\n+  // Fetch your products data here\r\n+  return {\r\n+    props: {\r\n+      // Pass your products data as props here\r\n+      title: 'Products Index',\r\n+    },\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1690613860334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \r\n import type { ReactElement } from 'react'\r\n import type { GetStaticProps } from 'next'\r\n-import {ProductsLayout} from './products-layout'\r\n+import ProductsLayout from './products-layout'\r\n \r\n export default function ProductsIndex({ title }: { title: string }): ReactElement {\r\n   return (\r\n     <div>\r\n"
+                }
+            ],
+            "date": 1690613644236,
+            "name": "Commit-0",
+            "content": "// `app/dashboard/page.tsx` is the UI for the `/dashboard` URL\r\nexport default function Page() {\r\n    return <h1>Hello, Dashboard Page!</h1>\r\n  }"
+        }
+    ]
+}

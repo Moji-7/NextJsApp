@@ -3,13 +3,19 @@
 import React from 'react';
 import Link from 'next/link';
 
-// This is a layout component that defines common UI elements for the products segment
-//export default function Layout({ children }: { children: React.ReactNode }) {
-function ProductsLayout({ children }: { children: React.ReactNode }) {
+
+
+export default function ProductsLayout({
+    children, // will be a page or nested layout
+  }: {
+    children: React.ReactNode
+  }) {
     return (
-        <div>
-            <h2>Products</h2>
-            <ul>
+      <section>
+        {/* Include shared UI here e.g. a header or sidebar */}
+        <nav>
+
+        <ul>
                 {/* This is how you link to static or dynamic routes within the feature */}
                 <li>
                     <Link href="/products/shoes">Shoes</Link>
@@ -21,9 +27,11 @@ function ProductsLayout({ children }: { children: React.ReactNode }) {
                     <Link href="/products/accessories">Accessories</Link>
                 </li>
             </ul>
-            {children}
-        </div>
-    );
-}
-// This is how you export the layout component as a named export
-export { ProductsLayout };
+        </nav>
+   
+        {children}
+      </section>
+    )
+  }
+  // This is how you export the layout component as a named export
+//export { ProductsLayout };
